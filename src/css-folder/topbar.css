@@ -1,0 +1,11 @@
+
+nav {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+nav .topbar {
+    color: white;
+    margin: 0 15px;
+    font-size: 50px;
+}

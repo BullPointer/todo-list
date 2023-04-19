@@ -1,0 +1,3 @@
+function deleteFunc(params) {
+
+}
