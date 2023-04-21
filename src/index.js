@@ -1,8 +1,8 @@
 import './style.css';
-import api from './database/api';
 import topbar from './js-folder/topbar';
 import mapCatFunc from './js-folder/sidebar';
-import content from './js-folder/content';
+import todoHome from './js-folder/edit-folder/todo-home';
+import todoAdd from './js-folder/edit-folder/todo-add';
 
 
 class Todo {
@@ -11,31 +11,22 @@ class Todo {
         elem.classList.add(className);
         return elem;
     }
-    deleteFunc() {
-        const deleteBtn = document.querySelectorAll('.delete-btn');
-        deleteBtn.forEach(btn => {
+    
+    contentFunc = () => {        
+        const home = document.querySelectorAll('.home');
+        home.forEach(btn => {
             btn.addEventListener('click', () => {
-                const contentcontainer = document.querySelector('.content');
-                const container = document.querySelector('.container');
-                contentcontainer.removeChild(container);
-                state = state.filter((e) => e._id !== btn.id);
-                this.contentFunc();
+                todoHome();
             });
         });
-    }
-    contentFunc = () => {        
+
         const categories = document.querySelectorAll('.cate');
         categories.forEach(btn => {
             btn.addEventListener('click', () => {
-                const contentcontainer = document.querySelector('.content');
-                const container = document.querySelector('.container');
-                if(container) {
-                    contentcontainer.removeChild(container);
-                }
-                contentcontainer.appendChild(content(api()[btn.title]));
+                todoAdd(btn.title);
             });
         });
-        this.deleteFunc();
+
     }
     appendBody() {
         document.body.append(
@@ -46,9 +37,14 @@ class Todo {
         const nav = document.querySelector('nav');
         nav.appendChild(topbar('Todo List App'));
         mapCatFunc();
+        onload = () => {
+            todoHome();
+        }
         this.contentFunc();
-        
+
     }
 }
 const todo = new Todo();
 todo.appendBody();
+// const str = '2023 Jan 13';
+// console.log(str.slice(3, 7));

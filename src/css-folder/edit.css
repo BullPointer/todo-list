@@ -1,0 +1,88 @@
+
+.edit-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0,0,0,0.4);
+}
+.edit-container .edit-box {
+    width: 50%;
+    background: white;
+    border-radius: 5px; 
+} 
+.edit-container .edit-box .close{
+    float: right;
+    width: 30px;
+    padding: 10px 10px 10px 10px;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.edit-container .edit-box .close:hover{
+    cursor: pointer;
+}
+.edit-container .edit-box .textarea:nth-child(2) {
+    margin-top: 50px;
+
+}
+.edit-container .edit-box .textarea {
+    border: none;
+    outline: none;
+    margin: 20px 0 10px 10px;
+    border-bottom: 1px solid #000;
+    opacity: 0.8;
+    width: 80%;
+    height: 20px;
+    font-size: 18px;
+    -webkit-appearance: none;
+    resize: none;
+}
+.edit-container .edit-box .due-date, .change-priority, .confirm-edit {
+    display: flex;
+    column-gap: 10px;
+    padding: 15px;
+}
+.edit-container .edit-box .change-date {
+    padding: 4px;
+    text-align: center;
+    border-radius: 5px;
+    border-color: rgb(54, 54, 124);
+    color: rgb(52, 52, 196);
+}
+.low-btn {
+    padding: 12px;
+    color: green;
+    background: rgb(0,0,0,0.2);
+}
+.medium-btn {
+    padding: 12px;
+    color: yellow;
+    background: rgb(0,0,0,0.2);
+}
+.high-btn {
+    padding: 12px;
+    color: red;
+    background: rgb(0,0,0,0.2);
+}
+.low-btn:hover, .medium-btn:hover, .high-btn:hover {
+    cursor: pointer;
+    background: rgb(0,0,0,0.4);
+}
+.edit-container .edit-box .confirm-edit {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 15px;
+    border-radius: 5px;
+    opacity: 0.8;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    background: rgb(89, 89, 199);
+    color: white;
+}
+.edit-container .edit-box .confirm-edit:hover {
+    cursor: pointer;
+}

@@ -11,8 +11,8 @@ function sidebarDiv (txt, className, title) {
 export default function() {
     const sidebar = document.querySelector('.sidebar');
     sidebar.append(
-        sidebarDiv('Home', 'home'),
-        sidebarDiv('Project', 'project'),
+        sidebarDiv('Home', 'home', 'home'),
+        sidebarDiv('Project', 'project', 'new-project'),
         sidebarDiv('At Home', 'cate', 'athome'),
         sidebarDiv('Work', 'cate', 'work'),
         sidebarDiv('School', 'cate', 'school'),

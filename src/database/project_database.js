@@ -1,3 +1,4 @@
+import { setApi } from "./api";
 
 const todo_database = [
     {
@@ -11,6 +12,7 @@ const todo_database = [
                 priority: 'Low',
                 notes: 'A quick chores will help keep my home neat',
                 checklist: true,
+                objtitle: 'athome',
             },
             {
                 _id: '1',
@@ -20,6 +22,7 @@ const todo_database = [
                 priority: 'High',
                 notes: 'Make some money from home by freelancing',
                 checklist: false,
+                objtitle: 'athome',
             },
             {
                 _id: '2',
@@ -29,6 +32,7 @@ const todo_database = [
                 priority: 'Medium',
                 notes: 'Spend some time meditating',
                 checklist: false,
+                objtitle: 'athome',
             },
         ],
         work: [    
@@ -40,6 +44,7 @@ const todo_database = [
                 priority: 'High',
                 notes: 'Make sure all workers are present',
                 checklist: true,
+                objtitle: 'work',
             },
             {
                 _id: '1',
@@ -49,6 +54,7 @@ const todo_database = [
                 priority: 'Medium',
                 notes: 'Make sure I submit my work before going home',
                 checklist: false,
+                objtitle: 'work',
             },
         ],
         school: [    
@@ -60,6 +66,7 @@ const todo_database = [
                 priority: 'Low',
                 notes: 'Make sure I submit assignment',
                 checklist: false,
+                objtitle: 'school',
             },
             {
                 _id: '1',
@@ -69,6 +76,7 @@ const todo_database = [
                 priority: 'High',
                 notes: 'Avoid trouble by making sure you take the kids home',
                 checklist: true,
+                objtitle: 'school',
             },
             {
                 _id: '2',
@@ -78,6 +86,7 @@ const todo_database = [
                 priority: 'High',
                 notes: 'Have fun with friends before and after school',
                 checklist: false,
+                objtitle: 'school',
             },
         ],
         playground: [
@@ -88,7 +97,8 @@ const todo_database = [
                 dueDate: 'Jun 5th',
                 priority: 'High',
                 notes: 'Make sure the kids play safe...',
-                checklist: true
+                checklist: true,
+                objtitle: 'playground',
             },
             {
                 _id: '1',
@@ -97,7 +107,8 @@ const todo_database = [
                 dueDate: 'Nov 3rd',
                 priority: 'Medium',
                 notes: 'Neigbours love you more when you do so',
-                checklist: false
+                checklist: false,
+                objtitle: 'playground',
             },
             {
                 _id: '2',
@@ -106,10 +117,18 @@ const todo_database = [
                 dueDate: 'Feb 2nd',
                 priority: 'High',
                 notes: 'Spend the whold day taking a ride with friends',
-                checklist: false
+                checklist: false,
+                objtitle: 'playground',
             },
         ],
     },
 ];
+onload = () => {
+    alert('yes')
 
-localStorage.setItem('todo', JSON.stringify(todo_database));
+};
+const data = localStorage.getItem('todo');
+if(data === null) {
+    setApi(todo_database);
+}
+export default todo_database;

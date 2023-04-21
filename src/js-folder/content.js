@@ -1,13 +1,15 @@
 import '../css-folder/content.css';
-import click from './click-detail';
+import clickDetail from './click-detail';
+import setEdit from './edit-folder/setEdit';
+import clickEdit from './click-edit';
 
-
-function createCheckbox(items) {
+function createCheckbox(items, title) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.name = 'isread';
     checkbox.classList.add('check-box');
     checkbox.checked = items['checklist'];
+    setEdit(checkbox, title, items, 'checked', 'checklist');
     return checkbox;
 }
 function createProperties(txt, className, items) {
@@ -23,7 +25,7 @@ function detailButton(txt, className, items) {
     detail.classList.add(className);
     elem.appendChild(detail);
     detail.textContent = txt;
-    click(detail, items);
+    clickDetail(detail, items);
     return elem;
 }
 function dateButton(txt, className) {
@@ -35,15 +37,16 @@ function dateButton(txt, className) {
     detail.textContent = txt;
     return elem;
 }
-function editButton(txt, className) {
-    const elem = document.createElement('div');
-    elem.classList.add('detail');
-    const detail = document.createElement('div');
-    detail.classList.add(className);
-    elem.appendChild(detail);
-    detail.textContent = txt;
-    return elem;
-}
+function editButton(txt, className, items, title) {
+    const elem = document.createElement('div'); 
+    elem.classList.add('edit');
+    const edit = document.createElement('div');
+    edit.classList.add(className);
+    elem.appendChild(edit);
+    edit.textContent = txt;
+    clickEdit(elem, items, title);
+    return elem; 
+} 
 function deleteButton(index, txt, className) {
     const elem = document.createElement('div');
     elem.classList.add(className);
@@ -55,28 +58,27 @@ function deleteButton(index, txt, className) {
 
     return elem;
 }
-function createDiv(index, className, items) {
+function createDiv(index, className, items, title) {
     const elem = document.createElement('div');
     elem.classList.add(className);
     elem.append(
-        createCheckbox(items),
+        createCheckbox(items, title),
         createProperties(index, 'key', items),
         detailButton('Details', 'detail-btn', items),
         dateButton(items['dueDate'], 'date'),
-        editButton('Edit', 'edit-btn'),
+        editButton('Edit', 'edit-btn', items, title),
         deleteButton(index, 'Delete', 'delete'),
     );
     return elem;
 }
-function contentFunc(items) {
+function content(items) {
     const container = document.createElement('div');
     container.classList.add('container');
     for (let index = 0; index < items.length; index++) {
         container.appendChild(
-            createDiv(items[index]['_id'], 'todo', items[index])
+            createDiv(items[index]['_id'], 'todo', items[index], items[index]['objtitle'])
         );
     }
-
     return container;
 }
-export default contentFunc;
+export default content;
