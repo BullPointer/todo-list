@@ -62,7 +62,8 @@ function editFunc(txt, className, title, items) {
     submitEdit(elem, title, items);
     return elem; 
 } 
-export default function(elem, items, title) {
+export default function(elem, items, title) { 
+
     elem.addEventListener('click', () => {
         document.body.appendChild(createDiv());
         const box = document.querySelector('.edit-box');

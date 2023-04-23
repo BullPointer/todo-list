@@ -4,7 +4,7 @@ const getPosition = () => {
     const athome = localStorage.getItem('position');
     return athome;
 }
-const setPosition = (data) => {
+const setPosition = (data) => {        
     return localStorage.setItem('position', data);
 }
 const getApi = () => {

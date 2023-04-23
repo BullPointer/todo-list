@@ -10,13 +10,17 @@ export default function(title) {
         ...getApi()[catArr[2]],
         ...getApi()[catArr[3]],
     ];
+    let shuffled = state
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
 
     const contentcontainer = document.querySelector('.content');
     const container = document.querySelector('.container');
     if(container) {
         contentcontainer.removeChild(container);
     }
-    contentcontainer.appendChild(content(state));
+    contentcontainer.appendChild(content(shuffled));
     setPosition('home');
 } 
  

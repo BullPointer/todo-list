@@ -1,12 +1,19 @@
-export default function() {
-    const deleteBtn = document.querySelectorAll('.delete-btn');
-    deleteBtn.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const contentcontainer = document.querySelector('.content');
-            const container = document.querySelector('.container');
-            contentcontainer.removeChild(container);
-            state = state.filter((e) => e._id !== btn.id);
-            this.contentFunc();
-        });
+import { getApi, setApi, getPosition } from "../database/api";
+import todoHome from "./edit-folder/todo-home";
+import todoAdd from "./edit-folder/todo-add";
+
+export default function(elem, items, title) {
+    elem.addEventListener('click', () => {
+        let state = [getApi()];
+
+        const newObj = state[0][title].filter(
+            (obj) => obj['_id'] !== items['_id']
+        );
+        state[0][title] = newObj;
+        setApi(state);
+        if(getPosition() === 'home') {
+            return todoHome();
+        }
+        return todoAdd(title);
     });
 }

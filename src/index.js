@@ -2,6 +2,7 @@ import './style.css';
 import topbar from './js-folder/topbar';
 import mapCatFunc from './js-folder/sidebar';
 import todoHome from './js-folder/edit-folder/todo-home';
+import newContent from './js-folder/newContent';
 import todoAdd from './js-folder/edit-folder/todo-add';
 
 
@@ -19,7 +20,8 @@ class Todo {
                 todoHome();
             });
         });
-
+        const project = document.querySelector('.project');
+        newContent(project);
         const categories = document.querySelectorAll('.cate');
         categories.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -46,5 +48,5 @@ class Todo {
 }
 const todo = new Todo();
 todo.appendBody();
-// const str = '2023 Jan 13';
-// console.log(str.slice(3, 7));
+
+// How to make javascript project contribution on github

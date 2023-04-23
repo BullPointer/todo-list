@@ -2,6 +2,7 @@ import '../css-folder/content.css';
 import clickDetail from './click-detail';
 import setEdit from './edit-folder/setEdit';
 import clickEdit from './click-edit';
+import deleteDetail from './delete-detail';
 
 function createCheckbox(items, title) {
     const checkbox = document.createElement('input');
@@ -47,7 +48,7 @@ function editButton(txt, className, items, title) {
     clickEdit(elem, items, title);
     return elem; 
 } 
-function deleteButton(index, txt, className) {
+function deleteButton(index, txt, className, items, title) {
     const elem = document.createElement('div');
     elem.classList.add(className);
     const deleteBtn = document.createElement('div');
@@ -55,7 +56,7 @@ function deleteButton(index, txt, className) {
     deleteBtn.id = index;
     elem.appendChild(deleteBtn);
     deleteBtn.textContent = txt;
-
+    deleteDetail(elem, items, title);
     return elem;
 }
 function createDiv(index, className, items, title) {
@@ -65,9 +66,13 @@ function createDiv(index, className, items, title) {
         createCheckbox(items, title),
         createProperties(index, 'key', items),
         detailButton('Details', 'detail-btn', items),
-        dateButton(items['dueDate'], 'date'),
+        dateButton(
+            items['dueDate'].substring(
+                items['dueDate'].indexOf(' ') + 1), 
+                'date'
+        ),
         editButton('Edit', 'edit-btn', items, title),
-        deleteButton(index, 'Delete', 'delete'),
+        deleteButton(index, 'Delete', 'delete', items, title),
     );
     return elem;
 }
