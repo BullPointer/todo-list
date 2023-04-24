@@ -4,22 +4,29 @@
     --primary-light: #eee;
     --secondary-light: #ddd;
     --light-blue: rgb(202, 202, 223);
-
+    --dark-blue: rgb(106, 106, 179);
 } 
+
 .content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
     background: var(--primary-dark);
 }
 .content .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
 }
 .content .container .todo {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     gap: 5px;
     width: 80%;
     margin: 7px 0;
@@ -47,7 +54,9 @@
     margin: 20px;
     width: 50px;
     height: 50px;
+    padding: 40px 20px;
 }
+
 .content .container .todo .detail, .edit {
     display: flex;
     align-items: center;
@@ -88,12 +97,79 @@
     width: 120px;
 }
 .content .container .todo .delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     border: 2px solid rgb(196, 132, 132);
     color: rgb(196, 132, 132);
-    padding: 3px 10px;
     background: transparent;
+}
+.content .container .todo .delete-btn svg {
+    width: 70%;
+    height: auto;
+    fill: rgb(196, 132, 132);
+}
+.content .container .todo .edit-btn svg {
+    width: 80%;
+    height: auto;
+    fill: var(--dark-blue);
 }
 .content .container .todo .delete-btn:hover, .detail-btn:hover, .edit-btn {
     cursor: pointer;
 }
+
+
+@media only screen and (max-width: 580px){
+    .content .container .todo:first-child {
+        margin-top: 0;
+    }
+    .content .container .todo {
+        width: 70%;
+        height: 35px;
+    }
+    .content .container .todo .edit-btn {
+        width: 25px;
+        height: 25px;
+        padding: 0;
+    }
+    .content .container .todo .detail-btn {
+        padding: 0 3px;
+    }
+
+} 
+@media only screen and (max-width: 500px){
+    .content .container .todo {
+        width: 60%;
+        height: 35px;
+    }
+} 
+/* @media only screen and (max-width: 440px){
+    .content .container .todo {
+        width: 60%;
+        height: 35px;
+    }
+}  */
+@media only screen and (max-width: 414px){
+    .content .container .todo {
+        font-size: x-small;
+        width: 50%;
+        height: 35px;
+    }
+    .content .container .todo input[type=checkbox] {
+        margin: 5px;
+        width: 50px;
+        height: 50px;
+    }
+    .content .container .todo .date {
+        font-size: xx-small;
+    }
+    .content .container .todo .item {
+        font-size: small;
+    }
+    .content .container .todo .edit-btn {
+        width: 17px;
+        height: 17px;
+        padding: 0;
+    }
+} 

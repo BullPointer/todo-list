@@ -49,4 +49,3 @@ class Todo {
 const todo = new Todo();
 todo.appendBody();
 
-// How to make javascript project contribution on github

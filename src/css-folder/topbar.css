@@ -3,9 +3,28 @@ nav {
     display: flex;
     justify-content: start;
     align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 nav .topbar {
+    display: flex;
+    justify-content: start;
+    align-items: center;
     color: white;
     margin: 0 15px;
     font-size: 50px;
+}
+nav .topbar .topbar-icon {
+    margin-left: 5px;
+    width: 70px;
+    height: 70px;
+}
+@media only screen and (max-width: 700px){
+    nav .topbar {
+        font-size: 25px;
+    }
+    nav .topbar .topbar-icon {
+        margin-left: 3px;
+        width: 50px;
+        height: 50px;
+    }
 }

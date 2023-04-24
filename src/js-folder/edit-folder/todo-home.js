@@ -10,10 +10,7 @@ export default function(title) {
         ...getApi()[catArr[2]],
         ...getApi()[catArr[3]],
     ];
-    let shuffled = state
-    .map(value => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value)
+    let shuffled = state.sort((a, b) => a.title > b.title);
 
     const contentcontainer = document.querySelector('.content');
     const container = document.querySelector('.container');

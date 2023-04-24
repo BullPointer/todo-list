@@ -47,3 +47,17 @@
     align-items: center;
     justify-content: center;
 }
+@media only screen and (max-width: 700px){
+    .check-details .details-info {
+        width: 80%;
+    }
+    .check-details .details-info .detail-title{
+        font-size: 20px;
+    }
+    .check-details .details-info .detail-box{
+        font-size: 14px;
+    }
+    .check-details .details-info .detail-box .key:first-child{
+        font-size: 15px;
+    }    
+}
