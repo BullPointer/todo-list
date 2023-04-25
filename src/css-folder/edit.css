@@ -125,33 +125,7 @@
     }
     .edit-container .edit-box .confirm-edit {
         font-size: 15px;
-        padding: none;
+        /* padding: none; */
         margin: 5px 10px;
     }
 }
-
-
-/* @media only screen and (max-width: 700px){
-    .edit-container .edit-box {
-        width: 80%;
-        height: 400px;
-        font-size: small;
-    } 
-    .edit-container .edit-box .textarea {
-        font-size: small;
-        margin: 20px 0 10px 10px;
-    }
-    .edit-container .edit-box .textarea:nth-child(2) {
-        margin-top: 0;
-    }
-    .edit-container .edit-box .change-priority {
-        flex-direction: column;
-        padding: 0;
-    }
-    .edit-container .edit-box .change-priority .priority {
-        margin-bottom: 4px;
-    }
-    .edit-container .edit-box .confirm-edit {
-        font-size: 15px;
-    }
-} */
