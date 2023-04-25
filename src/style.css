@@ -33,6 +33,9 @@ body {
 }
 @media only screen and (max-width: 700px){
     body {
+        width: auto;
+        overflow-x: hidden;
+        /* overflow: hidden; */
         grid-template-columns: 1fr;
         grid-template-rows: 80px 1fr;
         /* 175px */
