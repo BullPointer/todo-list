@@ -11,10 +11,11 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    padding-top: 10px;
     align-items: center;
     color: white;
-    background: white;
+    /* background: white; */
+    background: rgb(122, 122, 238);
 }
 
 .home {
@@ -57,6 +58,10 @@
 }
 @media only screen and (max-width: 700px){
     .sidebar {
+        background: rgb(122, 122, 238);
+        bottom: 0;
+        display: none;
+        height: auto;
         margin-top: 0;
     }
     .home, .project {
@@ -64,5 +69,8 @@
     }
     .cate {
         font-size: 14px;
+        padding: 18px;
+        margin-bottom: 0;
+        bottom: 0;
     }
 }

@@ -14,5 +14,5 @@ function createImg() {
     elem.textContent = txt;
     elem.appendChild(createImg())
     return elem;
-}
+} 
 export default topbar;

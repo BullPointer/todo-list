@@ -1,9 +1,17 @@
 
 nav {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav svg {
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    margin-right: 40px;
+    fill: white;
+    display: none;
 }
 nav .topbar {
     display: flex;
@@ -21,6 +29,9 @@ nav .topbar .topbar-icon {
 @media only screen and (max-width: 700px){
     nav .topbar {
         font-size: 25px;
+    }
+    nav svg {
+        display: block;
     }
     nav .topbar .topbar-icon {
         margin-left: 3px;
