@@ -34,7 +34,7 @@ body {
 
 @media only screen and (max-width: 700px){
     :root {
-        overflow: hidden;
+        overflow-x: hidden;
     }
     body {
         width: 100%;
