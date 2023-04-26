@@ -62,7 +62,8 @@
         bottom: 0;
         display: none;
         height: 240px;
-        margin-top: 0;
+        margin: 0;
+        /* margin-top: 0; */
     }
     .home, .project {
         font-size: 18px;
