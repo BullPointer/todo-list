@@ -120,8 +120,11 @@
 }
 
 @media only screen and (max-width: 700px){
-    .content .container .todo:first-child, .todo:last-child {
+    .content .container .todo:first-child {
         margin-top: 50px;
+    }
+    .content .container .todo:last-child {
+        margin-bottom: 50px;
     }
 }
 
