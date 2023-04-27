@@ -1,10 +1,14 @@
-
-nav {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: black;
+    padding: 8px;
+    width: 100%;
+    color: var(--primary-light);
 }
+
 nav svg {
     padding: 0;
     width: 25px;

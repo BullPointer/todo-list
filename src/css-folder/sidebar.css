@@ -8,14 +8,14 @@
 } 
 
 .sidebar {
+    width: 30%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: column;
     padding-top: 10px;
-    align-items: center;
-    color: white;
-    /* background: white; */
+    align-items: center;    
     background: rgb(122, 122, 238);
+    color: white;
 }
 
 .home {
@@ -58,12 +58,13 @@
 }
 @media only screen and (max-width: 700px){
     .sidebar {
+        width: 100%;
         background: rgb(122, 122, 238);
         bottom: 0;
         display: none;
-        height: 240px;
+        /* height: 100vh; */
         margin: 0;
-        /* margin-top: 0; */
+
     }
     .home, .project {
         font-size: 18px;
@@ -73,5 +74,8 @@
         padding: 18px;
         margin-bottom: 0;
         bottom: 0;
+    }
+    .cate:last-child {
+        margin-bottom: 5px;
     }
 }

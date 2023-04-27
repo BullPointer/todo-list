@@ -36,11 +36,16 @@ class Todo {
         const d="M1536 1088v128q0 26-19 45t-45 19H64q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 704V576q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 192V64q0-26 19-45T64 0h1408q26 0 45 19t19 45z"
         const size1 = '1536';
         const size2 = '1280';
-        document.body.append(
-            this.createDiv('nav', 'nav'), 
+        const container = this.createDiv('div', 'todo-container');
+        container.append(
             this.createDiv('div', 'sidebar'),
             this.createDiv('div', 'content')
         )
+        document.body.append(
+            this.createDiv('nav', 'nav'), 
+            container
+        )
+
         const nav = document.querySelector('nav');
         nav.appendChild(topbar('Todo List App'));
         nav.appendChild(renderIcon(d, size1, size2, 'svg'));

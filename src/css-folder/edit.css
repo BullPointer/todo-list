@@ -10,6 +10,7 @@
 }
 .edit-container .edit-box {
     width: 50%;
+    height: auto;
     background: white;
     border-radius: 5px; 
 } 
@@ -110,7 +111,7 @@
 @media only screen and (max-width: 700px){
     .edit-container .edit-box {
         width: 90%;
-        height: 90%;
+        height: auto;
     } 
     .edit-container .edit-box .textarea {
         margin: 10px 0 10px 10px;
@@ -125,7 +126,6 @@
     }
     .edit-container .edit-box .confirm-edit {
         font-size: 15px;
-        /* padding: none; */
-        margin: 5px 10px;
+        margin: 10px 10px;
     }
 }
